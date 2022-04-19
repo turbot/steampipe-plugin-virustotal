@@ -1,6 +1,6 @@
 module github.com/turbot/steampipe-plugin-virustotal
 
-go 1.17
+go 1.18
 
 require (
 	github.com/VirusTotal/vt-go v0.0.0-20210528074736-45bbe34cc8ab
