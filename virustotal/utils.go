@@ -8,8 +8,8 @@ import (
 
 	virustotal "github.com/VirusTotal/vt-go"
 
-	"github.com/turbot/steampipe-plugin-sdk/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v3/plugin/transform"
 )
 
 func connect(_ context.Context, d *plugin.QueryData) (*virustotal.Client, error) {
