@@ -1,3 +1,10 @@
+## v0.2.0 [2022-04-28]
+
+_Enhancements_
+
+- Added support for native Linux ARM and Mac M1 builds. ([#9](https://github.com/turbot/steampipe-plugin-virustotal/pull/9))
+- Recompiled plugin with [steampipe-plugin-sdk v3.1.0](https://github.com/turbot/steampipe-plugin-sdk/blob/main/CHANGELOG.md#v310--2022-03-30) and Go version `1.18`. ([#8](https://github.com/turbot/steampipe-plugin-virustotal/pull/8))
+
 ## v0.1.0 [2021-12-16]
 
 _Enhancements_
