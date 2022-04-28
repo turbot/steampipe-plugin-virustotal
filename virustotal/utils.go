@@ -25,10 +25,8 @@ func connect(_ context.Context, d *plugin.QueryData) (*virustotal.Client, error)
 
 	// But prefer the config
 	virustotalConfig := GetConfig(d.Connection)
-	if &virustotalConfig != nil {
-		if virustotalConfig.APIKey != nil {
-			apiKey = *virustotalConfig.APIKey
-		}
+	if virustotalConfig.APIKey != nil {
+		apiKey = *virustotalConfig.APIKey
 	}
 
 	if apiKey == "" {
