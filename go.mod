@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/VirusTotal/vt-go v0.0.0-20210528074736-45bbe34cc8ab
-	github.com/turbot/steampipe-plugin-sdk/v4 v4.1.6
+	github.com/turbot/steampipe-plugin-sdk/v5 v4.1.6
 )
 
 require (

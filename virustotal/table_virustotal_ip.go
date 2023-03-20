@@ -5,9 +5,9 @@ import (
 
 	virustotal "github.com/VirusTotal/vt-go"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableVirusTotalIP(ctx context.Context) *plugin.Table {
@@ -47,7 +47,7 @@ func tableVirusTotalIP(ctx context.Context) *plugin.Table {
 }
 
 func ipQual(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 	id := quals["id"].GetInetValue().GetAddr()
 	return id, nil
 }
@@ -58,7 +58,7 @@ func listIP(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (in
 		plugin.Logger(ctx).Error("virustotal_ip.listIP", "connection_error", err)
 		return nil, err
 	}
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 	id := quals["id"].GetInetValue().GetAddr()
 	u := virustotal.URL("ip_addresses/" + id)
 	it, err := conn.Iterator(u)
