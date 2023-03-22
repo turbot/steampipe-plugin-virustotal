@@ -5,9 +5,9 @@ import (
 
 	virustotal "github.com/VirusTotal/vt-go"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableVirusTotalURL(ctx context.Context) *plugin.Table {
@@ -60,7 +60,7 @@ func urlQual(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (i
 	// To ensure they match the original query the order is:
 	// * If URL qual is passed, return that; otherwise
 	// * Return the URL field from the object
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 	if quals["url"] != nil {
 		return quals["url"].GetStringValue(), nil
 	}
@@ -81,7 +81,7 @@ func listURL(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (i
 		plugin.Logger(ctx).Error("virustotal_url.listURL", "connection_error", err)
 		return nil, err
 	}
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 	var key string
 	if quals["id"] != nil {
 		key = quals["id"].GetStringValue()
