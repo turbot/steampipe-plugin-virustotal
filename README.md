@@ -6,7 +6,7 @@ Use SQL to query file, domain, URL and IP scanning results from VirusTotal.
 
 - **[Get started →](https://hub.steampipe.io/plugins/turbot/virustotal)**
 - Documentation: [Table definitions & examples](https://hub.steampipe.io/plugins/turbot/virustotal/tables)
-- Community: [Slack Channel](https://steampipe.io/community/join)
+- Community: [Join #steampipe on Slack →](https://turbot.com/community/join)
 - Get involved: [Issues](https://github.com/turbot/steampipe-plugin-virustotal/issues)
 
 ## Quick start
