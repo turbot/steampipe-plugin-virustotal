@@ -11,6 +11,9 @@ VirusTotal is a free online service that analyzes files and URLs for viruses, wo
 
 The `virustotal_domain` table provides insights into Domain Reports within VirusTotal. As a cybersecurity analyst, explore domain-specific details through this table, including detections, resolutions, and subdomains. Utilize it to uncover information about domains, such as those linked with malicious activities, the resolved IPs, and the detection of potentially harmful subdomains.
 
+**Important Notes**
+- You must specify the `id` (registered domain name) in the `where` clause to query this table.
+
 ## Examples
 
 ### Get domain information

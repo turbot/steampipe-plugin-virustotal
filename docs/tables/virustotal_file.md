@@ -11,6 +11,9 @@ VirusTotal is a free service that analyzes suspicious files and URLs to detect t
 
 The `virustotal_file` table provides insights into file reports within VirusTotal. As a security analyst, explore file-specific details through this table, including scan results, positives found, and scan date. Utilize it to uncover information about files, such as those with potential threats, the detection ratio, and the verification of scan results.
 
+**Important Notes**
+- You must specify either the `path` (ocal path to a file) or the `id` (hash of the file) in the `where` clause to query this table.
+
 ## Examples
 
 ### Get VirusTotal information for a local file

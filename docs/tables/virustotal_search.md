@@ -11,6 +11,9 @@ VirusTotal is a service that analyzes files and URLs for viruses, worms, trojans
 
 The `virustotal_search` table provides insights into the search results from VirusTotal. As a security analyst, explore the details of antivirus scan results, website scanning, and URL/domain blacklisting through this table. Utilize it to uncover information about potential security threats, such as malware, trojans, and other malicious content.
 
+**Important Notes**
+- You must specify the `query` in the `where` clause to query this table.
+
 ## Examples
 
 ### Simple searches (free tier)

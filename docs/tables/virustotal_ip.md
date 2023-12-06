@@ -11,6 +11,9 @@ VirusTotal is a service that analyzes files and URLs for viruses, worms, trojans
 
 The `virustotal_ip` table provides insights into IP addresses within VirusTotal. As a cybersecurity analyst, explore IP-specific details through this table, including detections of URLs, downloadable files, and additional information. Utilize it to uncover information about IP addresses, such as those associated with malicious activities, and to verify the safety of certain IPs.
 
+**Important Notes**
+- You must specify the `id` (IP address) in the `where` clause to query this table.
+
 ## Examples
 
 ### Get IP information

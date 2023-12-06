@@ -11,6 +11,9 @@ VirusTotal is a service that analyzes files and URLs for viruses, worms, trojans
 
 The `virustotal_url` table provides insights into URL reports within VirusTotal. As a cybersecurity analyst, explore URL-specific details through this table, including scan dates, detection ratios, and scan results. Utilize it to uncover information about URLs, such as their safety status, the details of the scans performed on them, and the detection ratios associated with each URL.
 
+**Important Notes**
+- You must specify either the `url` (URL address) or the `id` (hash of the URL) in the `where` clause to query this table.
+
 ## Examples
 
 ### Get URL information
