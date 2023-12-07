@@ -19,19 +19,28 @@ The `virustotal_ip` table provides insights into IP addresses within VirusTotal.
 ### Get IP information
 Discover the details of a specific IP address to understand its associated risks and behavior. This can be particularly useful in cybersecurity investigations or network monitoring.
 
-```sql
+```sql+postgres
 select
   *
 from
   virustotal_ip
 where
-  id = '76.76.21.21'
+  id = '76.76.21.21';
+```
+
+```sql+sqlite
+select
+  *
+from
+  virustotal_ip
+where
+  id = '76.76.21.21';
 ```
 
 ### Find all scanner results where result was not clean
 Explore scanner results that identified potential threats or issues, providing a valuable tool for cyber security assessments and threat detection.
 
-```sql
+```sql+postgres
 select
   analysis.key as scanner,
   analysis.value ->> 'result' as result
@@ -42,5 +51,19 @@ where
   id = '76.76.21.21'
   and analysis.value ->> 'result' != 'clean'
 order by
-  scanner
+  scanner;
+```
+
+```sql+sqlite
+select
+  analysis.key as scanner,
+  json_extract(analysis.value, '$.result') as result
+from
+  virustotal.virustotal_ip,
+  json_each(last_analysis_results) as analysis
+where
+  id = '76.76.21.21'
+  and json_extract(analysis.value, '$.result') != 'clean'
+order by
+  scanner;
 ```

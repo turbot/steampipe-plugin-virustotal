@@ -19,11 +19,20 @@ The `virustotal_domain` table provides insights into Domain Reports within Virus
 ### Get domain information
 Explore the detailed information associated with a specific domain to understand its characteristics and potential security risks. This can be particularly useful for cybersecurity analysis and threat detection.
 
-```sql
+```sql+postgres
 select
   *
 from
   virustotal_domain
 where
-  id = 'steampipe.io'
+  id = 'steampipe.io';
+```
+
+```sql+sqlite
+select
+  *
+from
+  virustotal_domain
+where
+  id = 'steampipe.io';
 ```
