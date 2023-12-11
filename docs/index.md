@@ -8,6 +8,7 @@ short_name: "virustotal"
 description: "Steampipe plugin to query file, domain, URL and IP scanning results from VirusTotal."
 og_description: "Query VirusTotal with SQL! Open source CLI. No DB required."
 og_image: "/images/plugins/turbot/virustotal-social-graphic.png"
+engines: ["steampipe", "sqlite", "postgres", "export"]
 ---
 
 # VirusTotal + Steampipe
