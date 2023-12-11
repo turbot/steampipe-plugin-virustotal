@@ -71,7 +71,4 @@ connection "virustotal" {
 
 - `api_key` - Your VirusTotal API key.
 
-## Get involved
 
-- Open source: https://github.com/turbot/steampipe-plugin-virustotal
-- Community: [Join #steampipe on Slack →](https://turbot.com/community/join)
