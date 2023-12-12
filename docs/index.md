@@ -8,13 +8,14 @@ short_name: "virustotal"
 description: "Steampipe plugin to query file, domain, URL and IP scanning results from VirusTotal."
 og_description: "Query VirusTotal with SQL! Open source CLI. No DB required."
 og_image: "/images/plugins/turbot/virustotal-social-graphic.png"
+engines: ["steampipe", "sqlite", "postgres", "export"]
 ---
 
 # VirusTotal + Steampipe
 
 [VirusTotal](https://virustotal.com) is an Internet security, file and URL analyzer.
 
-[Steampipe](https://steampipe.io) is an open source CLI to instantly query cloud APIs using SQL.
+[Steampipe](https://steampipe.io) is an open-source zero-ETL engine to instantly query cloud APIs using SQL.
 
 Get VirusTotal scan data for a local file:
 
@@ -70,7 +71,4 @@ connection "virustotal" {
 
 - `api_key` - Your VirusTotal API key.
 
-## Get involved
 
-- Open source: https://github.com/turbot/steampipe-plugin-virustotal
-- Community: [Join #steampipe on Slack →](https://turbot.com/community/join)
