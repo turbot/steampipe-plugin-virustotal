@@ -55,7 +55,7 @@ steampipe plugin install virustotal
 
 | Item        | Description                                                                                                               |
 | :---------- | :------------------------------------------------------------------------------------------------------------------------ |
-| Credentials | VirusTotal requires a [free API key](https://support.virustotal.com/hc/en-us/articles/115002100149-API) for all requests. |
+| Credentials | VirusTotal requires a [free API key](https://docs.virustotal.com/docs/please-give-me-an-api-key) for all requests. |
 | Radius      | Each connection represents a single VirusTotal account.                                                                   |
 
 ### Configuration
