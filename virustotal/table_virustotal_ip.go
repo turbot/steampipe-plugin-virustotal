@@ -60,7 +60,8 @@ func listIP(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (in
 	}
 	quals := d.EqualsQuals
 	id := quals["id"].GetInetValue().GetAddr()
-	u := virustotal.URL("ip_addresses/" + id)
+	u := virustotal.URL("ip_addresses/%s", id)
+
 	it, err := conn.Iterator(u)
 	if err != nil {
 		plugin.Logger(ctx).Error("virustotal_ip.listIP", "query_error", err, "it", it)

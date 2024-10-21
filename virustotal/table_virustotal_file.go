@@ -94,7 +94,7 @@ func listFile(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (
 		}
 		key = hash
 	}
-	u := virustotal.URL("files/" + key)
+	u := virustotal.URL("files/%s", key)
 	it, err := conn.Iterator(u)
 	if err != nil {
 		plugin.Logger(ctx).Error("virustotal_file.listFile", "query_error", err, "it", it)
