@@ -53,7 +53,7 @@ func listDomain(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData)
 	}
 	quals := d.EqualsQuals
 	id := quals["id"].GetStringValue()
-	u := virustotal.URL("domains/" + id)
+	u := virustotal.URL("domains/%s", id)
 	it, err := conn.Iterator(u)
 	if err != nil {
 		plugin.Logger(ctx).Error("virustotal_domain.listDomain", "query_error", err, "it", it)

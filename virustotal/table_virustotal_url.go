@@ -88,7 +88,7 @@ func listURL(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (i
 	} else if quals["url"] != nil {
 		key = urlToID(quals["url"].GetStringValue())
 	}
-	u := virustotal.URL("urls/" + key)
+	u := virustotal.URL("urls/%s", key)
 	it, err := conn.Iterator(u)
 	if err != nil {
 		plugin.Logger(ctx).Error("virustotal_url.listURL", "query_error", err, "it", it)
