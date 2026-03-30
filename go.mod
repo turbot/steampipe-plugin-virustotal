@@ -5,7 +5,7 @@ go 1.24
 toolchain go1.24.1
 
 require (
-	github.com/VirusTotal/vt-go v0.0.0-20210528074736-45bbe34cc8ab
+	github.com/VirusTotal/vt-go v1.1.0
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.13.1
 )
 
