@@ -9,9 +9,9 @@ import (
 
 	virustotal "github.com/VirusTotal/vt-go"
 
-	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v6/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin/transform"
 )
 
 func tableVirusTotalFile(ctx context.Context) *plugin.Table {
@@ -68,7 +68,7 @@ func getFileSHA256SUM(filename string) (string, error) {
 	if err != nil {
 		return hashsum, err
 	}
-	defer f.Close()
+	defer func() { _ = f.Close() }()
 	h := sha256.New()
 	if _, err := io.Copy(h, f); err != nil {
 		return hashsum, err
